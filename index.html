@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <h1>Hi guys!</h1>
-    <h2>Oh hi! Nice to see you again.</h2>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url: "https://api-gate.movieglu.com/",
+            type: "GET",
+            headers: {
+                "client": "BUIL",
+                "x-api-key": "qfrTP5G7c5ySZmgMERAeSPt04Gl4PU4iUbZqOb3",
+                "Authorization": "Basic QlVJTDo0Q0ZUOHd2VzlwbXM=",
+                "api-version": "v102"
+            }
+        }).then(function(response){
+            console.log(response);
+        });
+    </script>
+
     
 </body>
 </html>
