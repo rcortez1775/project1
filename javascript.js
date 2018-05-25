@@ -14,19 +14,23 @@ function initMap(array) {
   }
 
     $.ajax({
-        url: "https://data.nasa.gov/resource/y77d-th95.json",
+        url: "https://data.nasa.gov/resource/y77d-th95.json?year=1950-01-01T00:00:00.000",
         method: "GET"
     }).then(function(response){
+        console.log(response);
 
-        var locations =[];
-        for (var i = 0; i < response.length; i++){
-            if (response[i].year === "1951-01-01T00:00:00.000"){
-                locations.push(response[i]);
-
-            }
-        }
-    
+        var locations = response;
         initMap(locations);
+        // var locations =[];
+        // for (var i = 0; i < response.length; i++){
+        //     if (response[i].year === "1990-01-01T00:00:00.000"){
+        //         locations.push(response[i]);
+        //     }  
+        // }
+
+        // console.log(locations);
+        // initMap(locations);
+
        
     })
 
