@@ -21,15 +21,6 @@ function initMap(array) {
 
         var locations = response;
         initMap(locations);
-        // var locations =[];
-        // for (var i = 0; i < response.length; i++){
-        //     if (response[i].year === "1990-01-01T00:00:00.000"){
-        //         locations.push(response[i]);
-        //     }  
-        // }
-
-        // console.log(locations);
-        // initMap(locations);
 
        
     })
