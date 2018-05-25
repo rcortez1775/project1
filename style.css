@@ -1,7 +1,7 @@
 #map {
     height: 400px;
     /* The height is 400 pixels */
-    width: 100%;
+    width: 90%;
     /* The width is the width of the web page */
 }
 
@@ -12,7 +12,7 @@ html {
 
 .parallax {
     /* The image used */
-    background-image: url("http://fullhdwallpaper.org/free-hd-images/desktop-hd-wallpapers-1080p-1s-1920x1080/full-hd-wallpapers-1s-dniko-1920x1080.jpg");
+    background-image: url("https://i.pinimg.com/originals/85/24/27/85242752bc7691650122755bc88272ae.jpg");
     
     /* Full height */
     height: 500%;
@@ -84,14 +84,6 @@ html {
         
     }
 
-    h1 {
-        font-size: 100px;
-        font-family: 'Anaheim', sans-serif;
+    
 
-        text-align: center;
-        word-break: normal;
-        text-shadow: 2px 2px 4px #000000;
-    }
-    height: 400px;  /* The height is 400 pixels */
-    width: 100%;  /* The width is the width of the web page */
-   }
+    
