@@ -1,0 +1,94 @@
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/33424569_1518795511575774_5500196056253595648_n.jpg?_nc_cat=0&oh=7ad310b6db66b14cafe40905aef038eb&oe=5B920BDA");
+    
+    /* Full height */
+    height: 500%;
+    /* Center and scale the image nicely */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    color: white;
+    opacity: 0.9;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black; 
+    text-align: center; 
+    text-shadow: 20px 20px 20px rgb(7, 7, 7);
+    
+}
+
+    .btn {
+        border-radius: 4px;
+        background-color: lightblue;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 15px;
+        width: 150px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        font-family: 0px;
+        font-family: 'Anaheim', sans-serif;
+    }
+
+    .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .btn span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .btn:hover span {
+        padding-right: 25px;
+    }
+
+    .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .labelText {
+        font-size:100px;
+        font-family: 0px;
+        font-family: 'Anaheim', sans-serif;
+
+    }
+
+    .form-control {
+        width: 15%
+        
+    }
+
+    h1 {
+        font-size: 100px;
+        font-family: 'Anaheim', sans-serif;
+
+        text-align: center;
+        word-break: normal;
+        text-shadow: 2px 2px 4px #000000;
+    }

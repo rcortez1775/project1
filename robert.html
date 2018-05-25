@@ -1,0 +1,160 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ @rcortez1775
+Sign out
+0
+0 0 Rocky-Road/project1
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+Revert "Cleaned up the files and got the map initially working"
+
+ revert-2-nicole
+@rcortez1775
+rcortez1775 committed 41 seconds ago  Verified
+1 parent f57c456 commit a308b32a454d18be462e3d932b98a075b1eee6f0
+Showing  with 37 additions and 68 deletions.
+  
+37  index.html
+@@ -1,37 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-  <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+-  <link rel="stylesheet" href="style.css">
+-  <script src="zipsToCoords.js"></script>
+-
+-  
+-  <title>Document</title>
+-</head>
+-<body>
+-  
+-    <div class="form-group">
+-        <label for="zipCode">Enter a zipcode:</label>
+-        <input type="text" class="form-control" id="zipCode">
+-    </div>
+-    <div class="form-group">
+-        <button id="searchButton" type="button" class="btn btn-primary">Search</button>
+-        <button id="clearButton" type="button" class="btn btn-primary">Clear</button>
+-      </div>
+-
+-    <h3>My Google Maps Demo</h3>
+-    <!--The div element for the map -->
+-    <div id="map"></div>
+-    
+-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+-    <script src="javascript.js"></script>
+-    <script async defer
+-    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+-    </script>
+-
+-
+-</body>
+-</html>
+-
+  
+23  javascript.js
+@@ -1,23 +0,0 @@
+-
+-// Initialize and add the map
+-function initMap(latitude, longitude) {
+-    // The location of Uluru
+-    var uluru = {lat: latitude, lng: longitude};
+-    // The map, centered at Uluru
+-    var map = new google.maps.Map(
+-        document.getElementById('map'), {zoom: 4, center: uluru});
+-    // The marker, positioned at Uluru
+-    var marker = new google.maps.Marker({position: uluru, map: map});
+-  }
+-
+-
+-$("#searchButton").on("click", function(){
+-    event.preventDefault();
+-    
+-    var zip = $("#zipCode").val().trim();
+-    var latitude = Number(zipsToCords[zip].lat);
+-    var longitude = Number(zipsToCords[zip].lon);
+-    initMap(latitude, longitude);
+-});
+-
+-
+  
+37  nicole.html
+@@ -0,0 +1,37 @@
++<!DOCTYPE html>
++<html>
++  <head>
++    <style>
++       /* Set the size of the div element that contains the map */
++      #map {
++        height: 400px;  /* The height is 400 pixels */
++        width: 100%;  /* The width is the width of the web page */
++       }
++    </style>
++  </head>
++  <body>
++    <h3>My Google Maps Demo</h3>
++    <!--The div element for the map -->
++    <div id="map"></div>
++    <script>
++// Initialize and add the map
++function initMap() {
++  // The location of Uluru
++  var uluru = {lat: -25.344, lng: 131.036};
++  // The map, centered at Uluru
++  var map = new google.maps.Map(
++      document.getElementById('map'), {zoom: 4, center: uluru});
++  // The marker, positioned at Uluru
++  var marker = new google.maps.Marker({position: uluru, map: map});
++}
++    </script>
++    <!--Load the API from the specified URL
++    * The async attribute allows the browser to render the page while the API loads
++    * The key parameter will contain your own API key (which is not needed for this tutorial)
++    * The callback parameter executes the initMap() function
++    -->
++    <script async defer
++    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
++    </script>
++  </body>
++</html> 
+  
+4  style.css
+@@ -1,4 +0,0 @@
+-#map {
+-    height: 400px;  /* The height is 400 pixels */
+-    width: 100%;  /* The width is the width of the web page */
+-   } 
+  
+4  zipsToCoords.js
+Large diffs are not rendered by default.
+
+0 comments on commit a308b32
+@rcortez1775
+ 
+            
+ 
+ 
+
+Leave a comment
+Attach files by dragging & dropping, , or pasting from the clipboard.  Styling with Markdown is supported
+  You’re not receiving notifications from this thread.
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
