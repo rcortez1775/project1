@@ -8,9 +8,14 @@ style: 'mapbox://styles/mapbox/streets-v10'
 // Adds the zoom controls
 map.addControl(new mapboxgl.NavigationControl());
 
+// Function that clears all markers
+function clearMarkers(){
+    $("#marker").remove();
+}
+
 // Function that fills the table with meteors that fell during the year that the user typed in
 $("#searchButton").on("click", function(){
-
+    
     $("tbody").empty();
 
     var year = $("#year").val().trim();
@@ -32,6 +37,21 @@ $("#searchButton").on("click", function(){
 
         $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
         }
+
+        $("#displayAll").on("click", function(){
+            for (var i = 0; i < response.length; i++){
+                if(response[i].reclat !== undefined) {
+                    var popup = new mapboxgl.Popup({ offset: 15 })
+                    .setText(response[i].name);
+                    var markerElement = document.createElement('div');
+                    markerElement.id = "marker";
+                    new mapboxgl.Marker(markerElement)
+                        .setLngLat([response[i].reclong, response[i].reclat])
+                        .setPopup(popup)
+                        .addTo(map);
+                }
+            }
+        });
     })
 
     $("#year").val("");
@@ -53,3 +73,7 @@ $(document).on("click", ".meteorButton", function(){
         .addTo(map);
     
 });
+
+$("#clearAll").on("click", function(){
+
+})
