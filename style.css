@@ -28,8 +28,8 @@ html {
         border: 1px solid #8cf7b5;
         color: #8cf7b5;
         text-align: center;
-        font-size: 28px;
-        padding: 15px;
+        font-size: 14px;
+        padding: 10px;
         width: 150px;
         transition: all 0.5s;
         cursor: pointer;
@@ -76,7 +76,7 @@ html {
     }
 
 h1 {
-    padding-top: 20px;
+    padding-top: 5px;
     font-family: 'Rancho', cursive;
     font-size: 40px;
     color: #8cf7b5;
@@ -184,7 +184,6 @@ width: 300px;
 
 .meteorTable thead tr{
     display:block;
-<<<<<<< HEAD
   }
 
 #displayAll {
@@ -213,6 +212,4 @@ width: 300px;
 #clearAll:hover {
     background-color: #ff7568;
     color: white;
-=======
->>>>>>> origin/master
 }

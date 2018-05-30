@@ -38,8 +38,27 @@ $("#searchButton").on("click", function(){
 
         $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
         }
+
+        $("#displayAll").on("click", function(){
+            
+            for (var i = 0; i < response.length; i++)
+            {
+                
+                if(response[i].reclat !== undefined) {
+                    var popup = new mapboxgl.Popup({ offset: 15 })
+                    .setText(response[i].name);
+                    var markerElement = document.createElement('div');
+                    markerElement.id = "marker";
+                    new mapboxgl.Marker(markerElement)
+                        .setLngLat([response[i].reclong, response[i].reclat])
+                        .setPopup(popup)
+                        .addTo(map);
+                }
+
+            
+            }
+        });
     })
-    // Clears the user input field
     $("#year").val("");
 })
 
