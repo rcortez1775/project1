@@ -39,7 +39,10 @@ $("#searchButton").on("click", function(){
         }
 
         $("#displayAll").on("click", function(){
-            for (var i = 0; i < response.length; i++){
+            
+            for (var i = 0; i < response.length; i++)
+            {
+                
                 if(response[i].reclat !== undefined) {
                     var popup = new mapboxgl.Popup({ offset: 15 })
                     .setText(response[i].name);
@@ -50,10 +53,11 @@ $("#searchButton").on("click", function(){
                         .setPopup(popup)
                         .addTo(map);
                 }
+
+            
             }
         });
     })
-
     $("#year").val("");
 })
 
