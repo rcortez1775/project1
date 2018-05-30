@@ -163,10 +163,10 @@ td {
 }
 
 #marker {
-    background-image: url("google-309740_1280.png");
+    background-image: url("Meteor-512.png");
     background-size: cover;
-    width: 20px;
-    height: 30px;
+    width: 40px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -184,6 +184,7 @@ width: 300px;
 
 .meteorTable thead tr{
     display:block;
+<<<<<<< HEAD
   }
 
 #displayAll {
@@ -212,4 +213,6 @@ width: 300px;
 #clearAll:hover {
     background-color: #ff7568;
     color: white;
+=======
+>>>>>>> origin/master
 }
