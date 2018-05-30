@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />  
+   <link rel="stylesheet" href="style.css">
+
+    <title>Meteor Strikes</title>
+</head>
+
+<body>
+
+<div class="parallax">
+    <h1>Doomsday Database</h1>
+    <p class="instructions">This site gives users the ability to pinpoint locations of meteor strikes. Are you living in an impact zone?</p>
+    <p class="instructions">Enter a year to generate a table of all the meteors that fell to Earth during that time. From the table you can click on the name of a meteor to mark the location on the map of where it fell.</p>
+
+    <div id="searchInput">
+        <div class="form-group">
+            <label for="year">Enter a year:</label>
+            <input type="text" class="form-control" id="year" maxlength="4">
+        </div>
+        <div class="form-group">
+            <button id="searchButton" type="button" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+
+    <div id='map'></div>
+
+    <button id="displayAll" type="button">Display All</button>
+    <button id="clearAll" type="button">Clear All</button>
+
+    <table class="meteorTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mass (g)</th>
+                <th>Year</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+        </tbody>
+    </table>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascript.js"></script>
+    
+</body>
+
+
+</html>
