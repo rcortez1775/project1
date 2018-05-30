@@ -184,4 +184,32 @@ width: 300px;
 
 .meteorTable thead tr{
     display:block;
+  }
+
+#displayAll {
+    background-color: black;
+    border: 1px solid #8cf7b5;
+    color: #8cf7b5;
+    margin-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#displayAll:hover {
+    background-color: #8cf7b5;
+    color: black;
+}
+
+#clearAll {
+    background-color: #99160a;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+#clearAll:hover {
+    background-color: #ff7568;
+    color: white;
 }

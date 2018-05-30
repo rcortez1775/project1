@@ -8,10 +8,10 @@ style: 'mapbox://styles/mapbox/streets-v10'
 // Adds the zoom controls
 map.addControl(new mapboxgl.NavigationControl());
 
-// Function that clears all markers
-// function clearMarkers(){
-//     $("#marker").remove();
-// };
+// Function that removes all markers
+function clearMarkers(){
+    $('.allTheMarkers').remove();
+};
 
 // Function that fills the table with meteors that fell during the year that the user typed in
 $("#searchButton").on("click", function(){
@@ -25,7 +25,8 @@ $("#searchButton").on("click", function(){
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        
+
+        // Creates the table and makes a button out of the name of the meteor
         for(var i = 0; i < response.length; i ++){
             var newRow = $("<tr>")
             var name = $("<td button class='meteorButton'>").text(response[i].name);
@@ -37,6 +38,7 @@ $("#searchButton").on("click", function(){
 
         $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
         }
+<<<<<<< HEAD
 
         $("#displayAll").on("click", function(){
             
@@ -58,12 +60,15 @@ $("#searchButton").on("click", function(){
             }
         });
     })
+=======
+    })
+    // Clears the user input field
+>>>>>>> origin/master
     $("#year").val("");
 })
 
 // Function that displays a marker with a popup of the meteor name on the map at the latitude and longitude of the meteor that was clicked
 $(document).on("click", ".meteorButton", function(){
-    // $("#marker").remove();
     var latitude = $(this).attr("latitude");
     var longitude = $(this).attr("longitude"); 
 
@@ -71,6 +76,7 @@ $(document).on("click", ".meteorButton", function(){
     .setText($(this).text());
     var markerElement = document.createElement('div');
     markerElement.id = "marker";
+    markerElement.className = "allTheMarkers";
     new mapboxgl.Marker(markerElement)
         .setLngLat([longitude, latitude])
         .setPopup(popup)
@@ -78,6 +84,24 @@ $(document).on("click", ".meteorButton", function(){
     
 });
 
-// $("#clearAll").on("click", function(){
-//     clearMarkers();
-// })
+// Function that displays markers on the map for all the meteors that fell during a given year when 'Display All' button is clicked
+$("#displayAll").on("click", function(){
+    $('.meteorTable td:nth-child(1)').each(function() {
+        if(($(this).attr("latitude") !== undefined) && ($(this).attr("longitude") !== undefined)){
+            var popup = new mapboxgl.Popup({ offset: 15 })
+                .setText($(this).text());
+            var markerElement = document.createElement('div');
+                markerElement.id = "marker";
+                markerElement.className = "allTheMarkers";
+            new mapboxgl.Marker(markerElement)
+                .setLngLat([$(this).attr("longitude"), $(this).attr("latitude")])
+                .setPopup(popup)
+                .addTo(map);
+            }
+    });
+});
+
+// Clears all the markers on the map when the 'Clear All' button is clicked
+$("#clearAll").on("click", function(){
+    clearMarkers();
+});
