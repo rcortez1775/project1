@@ -38,7 +38,6 @@ $("#searchButton").on("click", function(){
 
         $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
         }
-<<<<<<< HEAD
 
         $("#displayAll").on("click", function(){
             
@@ -60,10 +59,6 @@ $("#searchButton").on("click", function(){
             }
         });
     })
-=======
-    })
-    // Clears the user input field
->>>>>>> origin/master
     $("#year").val("");
 })
 
