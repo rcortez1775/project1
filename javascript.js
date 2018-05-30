@@ -45,7 +45,6 @@ $("#searchButton").on("click", function(){
             $("#errorMessage").text("Sorry! There are no records of meteors hitting Earth during that year. Please try another year.");
         };
     })
-    // Clears the user input field
     $("#year").val("");
 })
 
