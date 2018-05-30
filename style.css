@@ -1,0 +1,190 @@
+
+body,
+html {
+    height: 100%;
+    background-color: black;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("https://i.pinimg.com/originals/85/24/27/85242752bc7691650122755bc88272ae.jpg");
+    
+    /* Full height */
+    height: 500%;
+    /* Center and scale the image nicely */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    color: white;
+    opacity: 0.9;
+    text-align: center; 
+    
+}
+
+    .btn {
+        border-radius: 4px;
+        background-color: black;
+        border: 1px solid #8cf7b5;
+        color: #8cf7b5;
+        text-align: center;
+        font-size: 28px;
+        padding: 15px;
+        width: 150px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        font-family: 0px;
+        font-family: 'Anaheim', sans-serif;
+    }
+
+    .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .btn span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .btn:hover span {
+        padding-right: 25px;
+    }
+
+    .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .labelText {
+        font-size:100px;
+        font-family: 0px;
+        font-family: 'Anaheim', sans-serif;
+
+    }
+
+    .form-control {
+        width: 15%
+        
+    }
+
+h1 {
+    padding-top: 20px;
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    color: #8cf7b5;
+}
+
+#searchInput {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.instructions {
+    padding: 0 40px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-group {
+    font-size: 25px;
+    color: #f2c05e;
+}
+
+#year {
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+.meteorTable{
+    background-color: #e8e6e3;
+    opacity: 0.8;
+    color: black;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchButton:hover {
+    background-color: #8cf7b5;
+    color: black;
+}
+
+th {
+    border-bottom: solid 1px black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.meteorButton {
+    background-color: #8cf7b5;
+    color: black;
+    cursor: pointer;
+}
+
+.meteorButton:hover {
+    background-color: black;
+    color: #f2c05e;
+}
+
+.meteorButton:focus {
+    background-color: black;
+    color: #f2c05e;
+}
+
+td {
+    border-bottom: solid 1px black;
+}
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    text-align: initial;
+}
+
+.mapboxgl-popup {
+    color: black;
+    cursor: pointer;
+}
+
+.mapboxgl-marker {
+    cursor: pointer;
+}
+
+#marker {
+    background-image: url("google-309740_1280.png");
+    background-size: cover;
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+th, td {
+width: 300px;
+}
+
+.meteorTable tbody {
+    display:block;
+    overflow:auto;
+    height:200px;
+    width:100%
+}
+
+.meteorTable thead tr{
+    display:block;
+  }
+
+    
