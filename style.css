@@ -1,13 +1,17 @@
+<<<<<<< HEAD
+=======
 #map {
     height: 400px;
     /* The height is 400 pixels */
     width: 90%;
     /* The width is the width of the web page */
 }
+>>>>>>> origin/master
 
 body,
 html {
     height: 100%;
+    background-color: black;
 }
 
 .parallax {
@@ -24,18 +28,15 @@ html {
     margin: 0 auto;
     color: white;
     opacity: 0.9;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black; 
     text-align: center; 
-    text-shadow: 20px 20px 20px rgb(7, 7, 7);
     
 }
 
     .btn {
         border-radius: 4px;
-        background-color: lightblue;
-        border: none;
-        color: #FFFFFF;
+        background-color: black;
+        border: 1px solid #8cf7b5;
+        color: #8cf7b5;
         text-align: center;
         font-size: 28px;
         padding: 15px;
@@ -84,7 +85,119 @@ html {
         
     }
 
-    
+h1 {
+    padding-top: 20px;
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    color: #8cf7b5;
+}
+
+#searchInput {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.instructions {
+    padding: 0 40px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-group {
+    font-size: 25px;
+    color: #f2c05e;
+}
+
+#year {
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+.meteorTable{
+    background-color: #e8e6e3;
+    opacity: 0.8;
+    color: black;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#searchButton:hover {
+    background-color: #8cf7b5;
+    color: black;
+}
+
+th {
+    border-bottom: solid 1px black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.meteorButton {
+    background-color: #8cf7b5;
+    color: black;
+    cursor: pointer;
+}
+
+.meteorButton:hover {
+    background-color: black;
+    color: #f2c05e;
+}
+
+.meteorButton:focus {
+    background-color: black;
+    color: #f2c05e;
+}
+
+td {
+    border-bottom: solid 1px black;
+}
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    text-align: initial;
+}
+
+.mapboxgl-popup {
+    color: black;
+    cursor: pointer;
+}
+
+.mapboxgl-marker {
+    cursor: pointer;
+}
+
+#marker {
+    background-image: url("google-309740_1280.png");
+    background-size: cover;
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+th, td {
+width: 300px;
+}
+
+.meteorTable tbody {
+    display:block;
+    overflow:auto;
+    height:200px;
+    width:100%
+}
+
+.meteorTable thead tr{
+    display:block;
+  }
 
     
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
