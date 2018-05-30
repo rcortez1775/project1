@@ -9,13 +9,13 @@ style: 'mapbox://styles/mapbox/streets-v10'
 map.addControl(new mapboxgl.NavigationControl());
 
 // Function that clears all markers
-function clearMarkers(){
-    $("#marker").remove();
-}
+// function clearMarkers(){
+//     $("#marker").remove();
+// };
 
 // Function that fills the table with meteors that fell during the year that the user typed in
 $("#searchButton").on("click", function(){
-    
+
     $("tbody").empty();
 
     var year = $("#year").val().trim();
@@ -61,7 +61,7 @@ $("#searchButton").on("click", function(){
 $(document).on("click", ".meteorButton", function(){
     // $("#marker").remove();
     var latitude = $(this).attr("latitude");
-    var longitude = $(this).attr("longitude");
+    var longitude = $(this).attr("longitude"); 
 
     var popup = new mapboxgl.Popup({ offset: 15 })
     .setText($(this).text());
@@ -74,6 +74,6 @@ $(document).on("click", ".meteorButton", function(){
     
 });
 
-$("#clearAll").on("click", function(){
-
-})
+// $("#clearAll").on("click", function(){
+//     clearMarkers();
+// })
