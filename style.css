@@ -184,7 +184,7 @@ width: 300px;
 
 .meteorTable thead tr{
     display:block;
-<<<<<<< HEAD
+
   }
 
 #displayAll {
@@ -213,6 +213,5 @@ width: 300px;
 #clearAll:hover {
     background-color: #ff7568;
     color: white;
-=======
->>>>>>> origin/master
+
 }
