@@ -42,7 +42,7 @@ $("#searchButton").on("click", function(){
             }
         }
         else {
-            $("#errorMessage").text("Sorry! There are no records of meteors hitting Earth during that year. Please try another year.");
+            $("#errorMessage").text("Sorry! There are no records of meteors hitting Earth during that year. Please try another year. Suggestion: Try 1850 or later.");
         };
     })
     $("#year").val("");
