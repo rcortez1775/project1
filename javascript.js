@@ -17,6 +17,7 @@ function clearMarkers(){
 $("#searchButton").on("click", function(){
 
     $("tbody").empty();
+    $("#errorMessage").text('');
 
     var year = $("#year").val().trim();
     var queryURL = "https://data.nasa.gov/resource/y77d-th95.json?year=" + year + "-01-01T00:00:00.000";
@@ -26,18 +27,23 @@ $("#searchButton").on("click", function(){
         method: "GET"
     }).then(function(response){
 
-        // Creates the table and makes a button out of the name of the meteor
-        for(var i = 0; i < response.length; i ++){
-            var newRow = $("<tr>")
-            var name = $("<td button class='meteorButton'>").text(response[i].name);
-            name.attr("latitude", response[i].reclat);
-            name.attr("longitude", response[i].reclong);
-            var mass = $("<td>").append(response[i].mass);
-            var location = $("<td>").text("latitude: " + response[i].reclat + " longitude: " + response[i].reclong);
-            var yearCell = $("<td>").text(year);
+        if(response.length >= 1 ){
+            // Creates the table and makes a button out of the name of the meteor
+            for(var i = 0; i < response.length; i ++){
+                var newRow = $("<tr>")
+                var name = $("<td button class='meteorButton'>").text(response[i].name);
+                name.attr("latitude", response[i].reclat);
+                name.attr("longitude", response[i].reclong);
+                var mass = $("<td>").append(response[i].mass);
+                var location = $("<td>").text("latitude: " + response[i].reclat + " longitude: " + response[i].reclong);
+                var yearCell = $("<td>").text(year);
 
-        $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
+            $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
+            }
         }
+        else {
+            $("#errorMessage").text("Sorry! There are no records of meteors hitting Earth during that year. Please try another year.");
+        };
     })
     // Clears the user input field
     $("#year").val("");
