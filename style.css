@@ -178,7 +178,7 @@ width: 300px;
 .meteorTable tbody {
     display:block;
     overflow:auto;
-    height:200px;
+    height:400px;
     width:100%
 }
 
@@ -213,4 +213,10 @@ width: 300px;
 #clearAll:hover {
     background-color: #ff7568;
     color: white;
+}
+
+#errorMessage {
+    color: #f2c05e;
+    font-size: 20px;
+    background-color: black;
 }
