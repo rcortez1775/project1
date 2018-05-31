@@ -130,6 +130,7 @@ th {
     background-color: #8cf7b5;
     color: black;
     cursor: pointer;
+    border: black solid 2px;
 }
 
 .meteorButton:hover {
