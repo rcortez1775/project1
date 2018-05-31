@@ -6,7 +6,7 @@ html {
 
 .parallax {
     
-    background-image: url("space.jpg");          /* Saved background image to repo */
+    background-image: url("../images/space.jpg");          /* Saved background image to repo */
     
     
     height: 150%;               /* Decreased height. */
@@ -164,7 +164,7 @@ td {
 }
 
 #marker {
-    background-image: url("Meteor-512.png");
+    background-image: url("../images/Meteor-512.png");
     background-size: cover;
     width: 40px;
     height: 50px;

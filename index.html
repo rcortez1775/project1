@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Geostar+Fill" rel="stylesheet">
     <title>Meteor Strikes</title>
@@ -21,7 +21,7 @@
             transmission.
         </marquee>
         <div id="searchInput">
-            <!-- Changed the Div to a Form tag to allow keypress event -->
+           
             <form class="form-group">
                 <label for="year">Enter a year:</label>
                 <input type="text" class="form-control" id="year" maxlength="4">
@@ -35,6 +35,7 @@
 
         <button id="displayAll" type="button">Display All</button>
         <button id="clearAll" type="button">Clear All</button>
+
 
         <table class="meteorTable">
             <thead>
@@ -51,15 +52,15 @@
         </table>
     </div>
 
-    <embed src="SFX.mp3" autostart="true" hidden="false" loop="false">
+    <embed src="assets/sounds/SFX.mp3" autostart="true" hidden="false" loop="false">
     <!-- Added a sound effect to the page when opened -->
     <noembed>
-        <bgsound src="SFX.mp3" loop="1">
+        <bgsound src="assets/sounds/SFX.mp3" loop="1">
     </noembed>
-    </embed>
+    </embed> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="assets/javascript/javascript.js"></script>
 
 </body>
 
