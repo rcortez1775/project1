@@ -223,3 +223,7 @@ width: 300px;
     font-family: 'Bungee', cursive;
 }
 
+#numOfSearches {
+    font-size: 20px;
+    color: #8cf7b5;
+}
