@@ -8,38 +8,25 @@
     <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Geostar+Fill" rel="stylesheet">
     <title>Meteor Strikes</title>
 </head>
 
 <body>
-<<<<<<< HEAD
-
-<div class="parallax">
-    <h1>Doomsday Database</h1>
-    <p class="instructions">Are you living in an impact zone? Enter a year to see what meteors hit where!</p>
-
-    <div id="searchInput">
-        <div class="form-group">
-            <label for="year">Enter a year:</label>
-            <input type="text" class="form-control" id="year" maxlength="4">
-            <button id="searchButton" type="submit" class="btn btn-primary">Search</button>
-=======
     <div class="parallax">
         <h1>Doomsday Database</h1>
         <marquee class="instructions">Apollo...come in. This is Mission Control. Your mission is to enter a year below to locate past meteor strikes. End
             transmission.
         </marquee>
         <div id="searchInput">
-            <!-- Changed the Div to a Form tag to allow keypress event -->
+           
             <form class="form-group">
                 <label for="year">Enter a year:</label>
                 <input type="text" class="form-control" id="year" maxlength="4">
-                <button id="searchButton" type="button" class="btn btn-primary">Search</button>
+                <button id="searchButton" type="submit" class="btn btn-primary">Search</button>
             </form>
->>>>>>> origin/master
         </div>
 
         <div id="errorMessage"></div>
@@ -64,15 +51,15 @@
         </table>
     </div>
 
-    <embed src="SFX.mp3" autostart="true" hidden="false" loop="false">
+    <embed src="assets/sounds/SFX.mp3" autostart="true" hidden="false" loop="false">
     <!-- Added a sound effect to the page when opened -->
     <noembed>
-        <bgsound src="SFX.mp3" loop="1">
+        <bgsound src="assets/sounds/SFX.mp3" loop="1">
     </noembed>
-    </embed>
+    </embed> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="assets/javascript/javascript.js"></script>
 
 </body>
 
