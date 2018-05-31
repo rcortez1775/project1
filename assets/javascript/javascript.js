@@ -13,16 +13,10 @@ function clearMarkers() {
     $('.allTheMarkers').remove();
 };
 
-<<<<<<< HEAD
 // Function that fills the table with meteors that fell during the year that the user typed in
 $("#searchButton").on("click", function(event){
     
     event.preventDefault();
-=======
-// Function that fills the table with meteors that fell during the year that the user typed ind
-$("#searchButton").on("click", function () {
-
->>>>>>> origin/master
     $("tbody").empty();
     $("#errorMessage").text('');
 
@@ -45,18 +39,10 @@ $("#searchButton").on("click", function () {
                 var location = $("<td>").text("latitude: " + response[i].reclat + " longitude: " + response[i].reclong);
                 var yearCell = $("<td>").text(year);
 
-<<<<<<< HEAD
-            $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
-            }
-        }
-        else {
-            $("#errorMessage").text("Sorry! There are no records of meteors hitting Earth during that year. Please try another year. Suggestion: Try 1850 or later.");
-=======
                 $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
             };
         } else {
             $("#errorMessage").text("Houston...We have a problem. No records found. Please try again.");
->>>>>>> origin/master
         };
     });
     $("#year").val("");
@@ -67,7 +53,7 @@ var input = document.getElementById("year");
 input.addEventListener("keyup", function(event){
     event.preventDefault();
     if (event.keyCode === 13){
-        document.getElementById("searchButton").click();
+        document.getElementById("#searchButton").click();
     }
 });
 
