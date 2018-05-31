@@ -6,10 +6,10 @@ html {
 
 .parallax {
     
-    background-image: url("../images/space.jpg");          /* Saved background image to repo */
+    background-image: url("../images/space.jpg");          
     
     
-    height: 150%;               /* Decreased height. */
+    height: 150%;               
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -76,7 +76,7 @@ html {
 
 h1 {
     padding-top: 5px;
-    font-family: 'Bungee', cursive;     /* changed font-family */
+    font-family: 'Bungee', cursive;     
     font-size: 40px;
     color: #8cf7b5;
 }
@@ -87,7 +87,7 @@ h1 {
 }
 
 .instructions {
-    padding: 0 40px;                /* Changed font-family and added marquee */
+    padding: 0 40px;                
     font-size: 20px;
     font-family: 'Geostar Fill', cursive;
     background-color: black;
@@ -217,7 +217,7 @@ width: 300px;
 }
 
 #errorMessage {
-    color: #99160a;                 /* Changed text color and font-family */
+    color: #99160a;                 
     font-size: 20px;
     background-color: black;
     font-family: 'Bungee', cursive;
@@ -226,4 +226,9 @@ width: 300px;
 #numOfSearches {
     font-size: 20px;
     color: #8cf7b5;
+}
+
+#directions {
+    color: #f2c05e;
+    margin: 0 auto;
 }

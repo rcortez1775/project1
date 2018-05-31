@@ -76,9 +76,9 @@ database.ref().on("value", function(snapshot) {
     // Change the HTML using jQuery to reflect the updated clickCounter value
     $("#numOfSearches").text("Total Searches: " + snapshot.val().searchCount);
   
-  // If any errors are experienced, log them to console.
+  // If any errors are experienced, let user know
   }, function(errorObject) {
-    
+    $("#numOfSearches").text("Error");
   });
 
 // Makes it so that if user hits enter button then it searches
@@ -110,7 +110,6 @@ $(document).on("click", ".meteorButton", function () {
         .addTo(map);
 
 });
-
 
 // Function that displays markers on the map for all the meteors that fell during a given year when 'Display All' button is clicked
 $("#displayAll").on("click", function () {
