@@ -5,12 +5,11 @@ html {
 }
 
 .parallax {
-    /* The image used */
-    background-image: url("https://i.pinimg.com/originals/85/24/27/85242752bc7691650122755bc88272ae.jpg");
     
-    /* Full height */
-    height: 500%;
-    /* Center and scale the image nicely */
+    background-image: url("space.jpg");          /* Saved background image to repo */
+    
+    
+    height: 150%;               /* Decreased height. */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,7 +76,7 @@ html {
 
 h1 {
     padding-top: 5px;
-    font-family: 'Rancho', cursive;
+    font-family: 'Bungee', cursive;     /* changed font-family */
     font-size: 40px;
     color: #8cf7b5;
 }
@@ -88,9 +87,12 @@ h1 {
 }
 
 .instructions {
-    padding: 0 40px;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 40px;                /* Changed font-family and added marquee */
+    font-size: 20px;
+    font-family: 'Geostar Fill', cursive;
+    background-color: black;
+    color: #8cf7b5;
+    opacity: 0.7;
 }
 
 .form-group {
@@ -146,7 +148,6 @@ td {
 
 #map {
     height: 400px;
-    /* The height is 400 pixels */
     width: 60%;
     margin-left: 20%;
     margin-bottom: 10px;
@@ -216,7 +217,9 @@ width: 300px;
 }
 
 #errorMessage {
-    color: #f2c05e;
+    color: #99160a;                 /* Changed text color and font-family */
     font-size: 20px;
     background-color: black;
+    font-family: 'Bungee', cursive;
 }
+
