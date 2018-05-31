@@ -1,22 +1,28 @@
 // Adds a mapbox map to our page
 mapboxgl.accessToken = 'pk.eyJ1IjoibmhvdXN0b24iLCJhIjoiY2pocjM3NW1hMXVrazNhcnlzNXRhYWlwaCJ9.nw1zpdgcZirrMCAev72v7Q';
 var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v10'
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10'
 });
 
 // Adds the zoom controls
 map.addControl(new mapboxgl.NavigationControl());
 
 // Function that removes all markers
-function clearMarkers(){
+function clearMarkers() {
     $('.allTheMarkers').remove();
 };
 
+<<<<<<< HEAD
 // Function that fills the table with meteors that fell during the year that the user typed in
 $("#searchButton").on("click", function(event){
     
     event.preventDefault();
+=======
+// Function that fills the table with meteors that fell during the year that the user typed ind
+$("#searchButton").on("click", function () {
+
+>>>>>>> origin/master
     $("tbody").empty();
     $("#errorMessage").text('');
 
@@ -26,11 +32,11 @@ $("#searchButton").on("click", function(event){
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
 
-        if(response.length >= 1 ){
+        if (response.length >= 1) {
             // Creates the table and makes a button out of the name of the meteor
-            for(var i = 0; i < response.length; i ++){
+            for (var i = 0; i < response.length; i++) {
                 var newRow = $("<tr>")
                 var name = $("<td button class='meteorButton'>").text(response[i].name);
                 name.attr("latitude", response[i].reclat);
@@ -39,15 +45,22 @@ $("#searchButton").on("click", function(event){
                 var location = $("<td>").text("latitude: " + response[i].reclat + " longitude: " + response[i].reclong);
                 var yearCell = $("<td>").text(year);
 
+<<<<<<< HEAD
             $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
             }
         }
         else {
             $("#errorMessage").text("Sorry! There are no records of meteors hitting Earth during that year. Please try another year. Suggestion: Try 1850 or later.");
+=======
+                $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
+            };
+        } else {
+            $("#errorMessage").text("Houston...We have a problem. No records found. Please try again.");
+>>>>>>> origin/master
         };
-    })
+    });
     $("#year").val("");
-})
+});
 
 // Makes it so that if user hits enter button then it searches
 var input = document.getElementById("year");
@@ -59,12 +72,14 @@ input.addEventListener("keyup", function(event){
 });
 
 // Function that displays a marker with a popup of the meteor name on the map at the latitude and longitude of the meteor that was clicked
-$(document).on("click", ".meteorButton", function(){
+$(document).on("click", ".meteorButton", function () {
     var latitude = $(this).attr("latitude");
-    var longitude = $(this).attr("longitude"); 
+    var longitude = $(this).attr("longitude");
 
-    var popup = new mapboxgl.Popup({ offset: 15 })
-    .setText($(this).text());
+    var popup = new mapboxgl.Popup({
+            offset: 15
+        })
+        .setText($(this).text());
     var markerElement = document.createElement('div');
     markerElement.id = "marker";
     markerElement.className = "allTheMarkers";
@@ -72,27 +87,30 @@ $(document).on("click", ".meteorButton", function(){
         .setLngLat([longitude, latitude])
         .setPopup(popup)
         .addTo(map);
-    
+
 });
 
+
 // Function that displays markers on the map for all the meteors that fell during a given year when 'Display All' button is clicked
-$("#displayAll").on("click", function(){
-    $('.meteorTable td:nth-child(1)').each(function() {
-        if(($(this).attr("latitude") !== undefined) && ($(this).attr("longitude") !== undefined)){
-            var popup = new mapboxgl.Popup({ offset: 15 })
+$("#displayAll").on("click", function () {
+    $('.meteorTable td:nth-child(1)').each(function () {
+        if (($(this).attr("latitude") !== undefined) && ($(this).attr("longitude") !== undefined)) {
+            var popup = new mapboxgl.Popup({
+                    offset: 15
+                })
                 .setText($(this).text());
             var markerElement = document.createElement('div');
-                markerElement.id = "marker";
-                markerElement.className = "allTheMarkers";
+            markerElement.id = "marker";
+            markerElement.className = "allTheMarkers";
             new mapboxgl.Marker(markerElement)
                 .setLngLat([$(this).attr("longitude"), $(this).attr("latitude")])
                 .setPopup(popup)
                 .addTo(map);
-            }
+        }
     });
 });
 
 // Clears all the markers on the map when the 'Clear All' button is clicked
-$("#clearAll").on("click", function(){
+$("#clearAll").on("click", function () {
     clearMarkers();
 });
