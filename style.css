@@ -6,10 +6,16 @@ html {
 
 .parallax {
     
+<<<<<<< HEAD
+    /* Full height */
+    height: 150%;
+    /* Center and scale the image nicely */
+=======
     background-image: url("space.jpg");          /* Saved background image to repo */
     
     
     height: 150%;               /* Decreased height. */
+>>>>>>> origin/master
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
