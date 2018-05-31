@@ -14,8 +14,9 @@ function clearMarkers(){
 };
 
 // Function that fills the table with meteors that fell during the year that the user typed in
-$("#searchButton").on("click", function(){
-
+$("#searchButton").on("click", function(event){
+    
+    event.preventDefault();
     $("tbody").empty();
     $("#errorMessage").text('');
 
@@ -47,6 +48,15 @@ $("#searchButton").on("click", function(){
     })
     $("#year").val("");
 })
+
+// Makes it so that if user hits enter button then it searches
+var input = document.getElementById("year");
+input.addEventListener("keyup", function(event){
+    event.preventDefault();
+    if (event.keyCode === 13){
+        document.getElementById("searchButton").click();
+    }
+});
 
 // Function that displays a marker with a popup of the meteor name on the map at the latitude and longitude of the meteor that was clicked
 $(document).on("click", ".meteorButton", function(){
