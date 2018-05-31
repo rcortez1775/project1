@@ -35,37 +35,43 @@ $("#searchButton").on("click", function (event) {
     $("tbody").empty();
     $("#errorMessage").text('');
 
-    var year = $("#year").val().trim();
-    var queryURL = "https://data.nasa.gov/resource/y77d-th95.json?year=" + year + "-01-01T00:00:00.000";
+    if(isNaN($("#year").val())){
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
+        $("#errorMessage").text("Please enter a year in the format YYYY");
+    }
+    else {
+        var year = $("#year").val().trim();
+        var queryURL = "https://data.nasa.gov/resource/y77d-th95.json?year=" + year + "-01-01T00:00:00.000";
 
-        if (response.length >= 1) {
-            // Creates the table and makes a button out of the name of the meteor
-            for (var i = 0; i < response.length; i++) {
-                var newRow = $("<tr>")
-                var name = $("<td button class='meteorButton'>").text(response[i].name);
-                name.attr("latitude", response[i].reclat);
-                name.attr("longitude", response[i].reclong);
-                var mass = $("<td>").append(response[i].mass);
-                var location = $("<td>").text("latitude: " + response[i].reclat + " longitude: " + response[i].reclong);
-                var yearCell = $("<td>").text(year);
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
 
-                $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
+            if (response.length >= 1) {
+                // Creates the table and makes a button out of the name of the meteor
+                for (var i = 0; i < response.length; i++) {
+                    var newRow = $("<tr>")
+                    var name = $("<td button class='meteorButton'>").text(response[i].name);
+                    name.attr("latitude", response[i].reclat);
+                    name.attr("longitude", response[i].reclong);
+                    var mass = $("<td>").append(response[i].mass);
+                    var location = $("<td>").text("latitude: " + response[i].reclat + " longitude: " + response[i].reclong);
+                    var yearCell = $("<td>").text(year);
+
+                    $(".meteorTable > tbody").append(newRow.append(name).append(mass).append(yearCell).append(location));
+                };
+            } else {
+                $("#errorMessage").text("Houston...We have a problem. No records found. Please try again.");
             };
-        } else {
-            $("#errorMessage").text("Houston...We have a problem. No records found. Please try again.");
-        };
-    });
-    $("#year").val("");
+        });
+        $("#year").val("");
 
-    searchCounter ++;
-    database.ref().set({
-        searchCount: searchCounter
-    });
+        searchCounter ++;
+        database.ref().set({
+            searchCount: searchCounter
+        });
+    };
 
 });
 
