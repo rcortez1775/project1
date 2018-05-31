@@ -1,3 +1,18 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBH2oGZp0jozjp_BX0Xu9bAw5gq7Wkn9yc",
+    authDomain: "my-awesome-project-e9174.firebaseapp.com",
+    databaseURL: "https://my-awesome-project-e9174.firebaseio.com",
+    projectId: "my-awesome-project-e9174",
+    storageBucket: "my-awesome-project-e9174.appspot.com",
+    messagingSenderId: "645153337489"
+  };
+  firebase.initializeApp(config);
+
+var database = firebase.database();
+
+var searchCounter = 0;
+
 // Adds a mapbox map to our page
 mapboxgl.accessToken = 'pk.eyJ1IjoibmhvdXN0b24iLCJhIjoiY2pocjM3NW1hMXVrazNhcnlzNXRhYWlwaCJ9.nw1zpdgcZirrMCAev72v7Q';
 var map = new mapboxgl.Map({
@@ -46,7 +61,25 @@ $("#searchButton").on("click", function (event) {
         };
     });
     $("#year").val("");
+
+    searchCounter ++;
+    database.ref().set({
+        searchCount: searchCounter
+    });
+
 });
+
+database.ref().on("value", function(snapshot) {
+    // Change the value of our searchCounter to match the value in the database
+    searchCounter = snapshot.val().searchCount;
+
+    // Change the HTML using jQuery to reflect the updated clickCounter value
+    $("#numOfSearches").text("Total Searches: " + snapshot.val().searchCount);
+  
+  // If any errors are experienced, log them to console.
+  }, function(errorObject) {
+    
+  });
 
 // Makes it so that if user hits enter button then it searches
 var input = document.getElementById("year");
